@@ -20,7 +20,7 @@ const createNpmScript = () => {
     return strings.join(' | ')
 }
 
-packageJson.scripts.watchifyBabelNodemonScript = createNpmScript()
+packageJson.scripts.watchifyBabelNodemon = createNpmScript()
 
 packageJson = JSON.stringify(packageJson, null, 2)
 fs.writeFileSync('./package.json', packageJson)
