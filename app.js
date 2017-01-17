@@ -1,6 +1,4 @@
-const express  = require('express')
-const app = express()
+'use strict'
 
-app.use(express.static('public'))
-
-app.listen(3000)
+// Set env vars from the .env file:
+require('dotenv').config()

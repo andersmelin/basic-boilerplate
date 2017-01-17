@@ -6,14 +6,16 @@
   "scripts": {
     "preuglify": "node ./npmScriptHelpers/createUglifyThese",
     "uglify": "npm run uglifyThese",
-    "preapp": "node  ./npmScriptHelpers/createWatchifyBabelNodemonScript",
-    "app": "npm run watchifyBabelNodemon",
+    "prestart": "node  ./npmScriptHelpers/createWatchifyBabelNodemonScript",
+    "start": "npm run watchifyBabelNodemon",
+    "watchifyBabelNodemon": "watchify ./src/scripts/watchfolder/example.js --debug -o ./public/scripts/example.js | babel ./public/scripts/example.js --watch --out-file ./public/scripts/example.js | nodemon app.js",
+    "uglifyThese": "uglifyjs ./public/scripts/example.js --debug --mangle --compress -o ./public/scripts/example.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "dotenv": "^4.0.0",
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

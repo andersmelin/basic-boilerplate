@@ -1,4 +1,4 @@
 
-const { say, something , now} = require('../libs/helpers')
+const { say, something , more, now} = require('../libs/helpers')
 
-console.log(say(), something(), now())
+console.log(say(), something(), more(), now())
