@@ -1,0 +1,27 @@
+{
+  "name": "browserifyTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preuglify": "node ./npmScriptHelpers/createUglifyThese",
+    "uglify": "npm run uglifyThese",
+    "preapp": "node  ./npmScriptHelpers/createWatchifyBabelNodemonScript",
+    "app": "npm run watchifyBabelNodemonScript",
+    "uglifyThese": "uglifyjs ./public/scripts/example.js --debug --mangle --compress -o ./public/scripts/example.js",
+    "watchifyBabelNodemonScript": "watchify ./src/scripts/watchfolder/example.js --debug -o ./public/scripts/example.js | babel ./public/scripts/example.js --watch --out-file ./public/scripts/example.js | nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "nodemon": "^1.11.0",
+    "uglify-js": "^2.7.5",
+    "watchify": "^3.8.0"
+  }
+}
